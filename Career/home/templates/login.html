@@ -1,0 +1,274 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 35%;
+  margin-right: 20px;
+  margin-left: 40px;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+</style>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{% static 'img/U.png' %}" type="image/png">
+        <title>Ultron: The Learning App</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/linericon/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/lightbox/simpleLightbox.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/nice-select/css/nice-select.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/animate-css/animate.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/popup/magnific-popup.css' %}">
+        <!-- main css -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    </head>
+        
+        <!--================Header Menu Area =================-->
+        <header class="header_area">
+           	<div class="top_menu row m0"  style="background-color: lightblue">
+           		<div class="container-fluid">
+					<div class="float-left">
+						<ul class="list header_social">
+							<li><a href="#"><i class="fa fa-facebook" style="color: blue"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter" style="color: blue"></i></a></li>
+							<li><a href="#"><i class="fa fa-dribbble" style="color: blue"></i></a></li>
+							<li><a href="#"><i class="fa fa-behance" style="color: blue"></i></a></li>
+						</ul>
+					</div>
+					{% comment %} <div class="float-right my-1" >
+						<form class="input-group d-flex flex-row" action="/action_page.php">
+						<input class="form-control mx-1" type="text" placeholder="Username" name="username">
+						<input class="form-control "type="password" placeholder="Password" name="psw">
+						<button class="btn btn-success mx-1" type="submit">Login</button>
+						<button class="btn btn-success mx-1" href="{% url 'reg' %}" type="submit">Register</button>
+						</form>
+					</div> {% endcomment %}
+           		</div>	
+           	</div>	
+            <div class="main_menu">
+            	<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<a class="navbar-brand logo_h" href="index.html"><img src="{% static 'img/logo1.jpeg' %}" alt="" width="70px" height="70px"></a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+							<ul class="nav navbar-nav menu_nav ml-auto">
+								<li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Home</a></li> 
+								<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li> 
+
+								<li class="nav-item submenu dropdown">
+									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+									<ul class="dropdown-menu">
+										<li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
+										<li class="nav-item"><a class="nav-link" href="{% url 'single_blog' %}">Blog Details</a></li>
+									</ul>
+								</li> 
+								<li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'reg' %}">Register</a></li>
+							</ul>
+						</div> 
+					</div>
+            	</nav>
+            </div>
+        </header>
+
+
+
+        <!-- start banner Area -->
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					<div class="banner_content text-center">
+						<h2>LOGIN Yourself</h2>
+						<div class="page_link">
+							<a href="{% url 'index' %}">Home</a>
+							<a href="{% url 'login' %}">Signin</a>
+						</div>
+					</div>
+				</div>
+            </div>
+        </section>
+        
+<body>
+<br>
+<form style="max-width:500px;margin:auto; border: 5px solid blue;padding: 10px;background-color: LightCyan ;" method="POST" ><br>
+ {% csrf_token %}
+  <h2 style="text-align: center;"><i class="fa fa-user-circle-o"  style="font-size:30px;color:red"></i> Login Form</h2>
+<br>  <div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <input class="input-field" type="text" placeholder="Username" name="usrnm">
+  </div>
+  
+  <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input class="input-field" type="password" placeholder="Password" name="psw">
+  </div>
+  </div>
+
+ 
+<button type="submit" class="btn">Login</button>
+ <button type="submit" class="btn">Register</button>
+</form>
+
+
+     <footer class="footer-area p_120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2  col-md-6 col-sm-6">
+                        <div class="single-footer-widget tp_widgets">
+                           <h6 class="footer_title">Top Products</h6>
+                            <ul class="list">
+                            	<li><a href="#">Managed Website</a></li>
+                            	<li><a href="#">Manage Reputation</a></li>
+                            	<li><a href="#">Power Tools</a></li>
+                            	<li><a href="#">Marketing Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2  col-md-6 col-sm-6">
+                        <div class="single-footer-widget tp_widgets">
+                           <h6 class="footer_title">Quick Links</h6>
+                            <ul class="list">
+                            	<li><a href="#">Jobs</a></li>
+                            	<li><a href="#">Brand Assets</a></li>
+                            	<li><a href="#">Investor Relations</a></li>
+                            	<li><a href="#">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2  col-md-6 col-sm-6">
+                        <div class="single-footer-widget tp_widgets">
+                           <h6 class="footer_title">Features</h6>
+                            <ul class="list">
+                            	<li><a href="#">Jobs</a></li>
+                            	<li><a href="#">Brand Assets</a></li>
+                            	<li><a href="#">Investor Relations</a></li>
+                            	<li><a href="#">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2  col-md-6 col-sm-6">
+                        <div class="single-footer-widget tp_widgets">
+                           <h6 class="footer_title">Resources</h6>
+                            <ul class="list">
+                            	<li><a href="#">Guides</a></li>
+                            	<li><a href="#">Research</a></li>
+                            	<li><a href="#">Experts</a></li>
+                            	<li><a href="#">Agencies</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <aside class="f_widget news_widget">
+        					<div class="f_title">
+        						<h3 class="footer_title">Newsletter</h3>
+        					</div>
+        					<p>Stay updated with our latest trends</p>
+        					<div id="mc_embed_signup">
+                                <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
+                                	<div class="input-group d-flex flex-row">
+                                        <input name="EMAIL" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
+                                        <button class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>		
+                                    </div>				
+                                    <div class="mt-10 info"></div>
+                                </form>
+                            </div>
+        				</aside>
+                    </div>
+                </div>
+                <div class="row footer-bottom d-flex justify-content-between align-items-center">
+                    <p class="col-lg-8 col-md-8 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    <div class="col-lg-4 col-md-4 footer-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <a href="#"><i class="fa fa-behance"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'js/popper.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/stellar.js' %}"></script>
+        <script src="{% static 'vendors/lightbox/simpleLightbox.min.js' %}"></script>
+        <script src="{% static 'vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'vendors/isotope/imagesloaded.pkgd.min.js' %}"></script>
+        <script src="{% static 'vendors/isotope/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'vendors/popup/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'vendors/counter-up/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'vendors/counter-up/jquery.counterup.js' %}"></script>
+        <script src="{% static 'js/mail-script.js' %}"></script>
+        <script src="{% static 'js/theme.js' %}"></script>
+</html>
+
+{% endblock %}

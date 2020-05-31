@@ -1,0 +1,240 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+
+
+
+<html lang="zxx" class="no-js">
+	<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  background-color: dodgerblue;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="img/fav.png">
+		<!-- Author Meta -->
+		<meta name="author" content="colorlib">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>Education</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="css/linearicons.css">
+			<link rel="stylesheet" href="css/font-awesome.min.css">
+			<link rel="stylesheet" href="css/bootstrap.css">
+			<link rel="stylesheet" href="css/magnific-popup.css">
+			<link rel="stylesheet" href="css/nice-select.css">							
+			<link rel="stylesheet" href="css/animate.min.css">
+			<link rel="stylesheet" href="css/owl.carousel.css">			
+			<link rel="stylesheet" href="css/jquery-ui.css">			
+			<link rel="stylesheet" href="css/main.css">
+		</head>
+		<body>	
+		  <header id="header" id="home"    style="background-color: black;">
+	  		<div class="header-top">
+	  			<div class="container">
+			  		<div class="row">
+			  			<div class="col-lg-6 col-sm-6 col-8 header-top-left no-padding">
+			  				<ul>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fa fa-behance"></i></a></li>
+			  				</ul>			
+			  			</div>
+			  			<div class="col-lg-6 col-sm-6 col-4 header-top-right no-padding">
+			  				<a href="tel:+953 012 3654 896"><span class="lnr lnr-phone-handset"></span> <span class="text">+953 012 3654 896</span></a>
+			  				<a href="mailto:support@colorlib.com"><span class="lnr lnr-envelope"></span> <span class="text">support@colorlib.com</span></a>			
+			  			</div>
+			  		</div>			  					
+	  			</div>
+			</div>
+		    <div class="container main-menu">
+		    	<div class="row align-items-center justify-content-between d-flex">
+			      <div id="logo">
+			        <a href="index.html"><img height="80px" width="160px" src="{% static 'img/c.png' %}" alt=""/></a>
+			      </div>
+			      <nav id="nav-menu-container">
+			        <ul class="nav-menu">
+				          <li><a href="{% url 'index' %}">Home</a></li>
+			          <li><a href="{% url 'about' %}">About</a></li>
+			          <li><a href="{% url 'counselling' %}">Counselling</a></li>
+			          <li><a href="{% url 'top' %}">Top colleges</a></li>
+			          <li class="menu-has-children"><a href="">CAREER OPTION</a>
+			            <ul>
+			              <li><a href="{% url 'after10' %}">AFTER 10TH</a></li>
+						  <li><a href="blog-single.html">AFTER 12TH</a></li>
+						  <li><a href="blog-single.html">GRADUATION</a></li>
+						  <li><a href="blog-single.html">KNOWLEDGE REGARDING ENTRENCE</a></li>
+
+			            </ul>
+			          </li>	
+			          <li class="menu-has-children"><a href="">Financial support</a>
+			            <ul>
+		              		<li><a href="{% url 'scholar' %}">Scholorships</a></li>		
+		              		<li><a href="{% url 'trusts' %}">Trust</a></li>		
+						</ul>
+					         
+			          				          					          		          
+			          <li><a href="{% url 'contact' %}">Contact</a></li>
+			          <li><a href="{% url 'reg' %}">Register</a></li>
+			      </nav><!-- #nav-menu-container -->		    		
+		    	</div>
+		    </div>
+		  </header><!-- #header -->
+	  			<section class="banner-area relative about-banner" id="home">	
+				<div class="overlay overlay-bg"></div>
+				<div class="container">				
+					<div class="row d-flex align-items-center justify-content-center">
+						<div class="about-content col-lg-12">
+							<h1 class="text-white">
+								ABOUT US			
+							</h1>	
+							<p class="text-white link-nav"><a href="{% url 'index' %}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{% url 'about' %}">About Us</a></p>
+						</div>	
+					</div>
+				</div>
+			</section>
+
+<body>
+
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'img/a.jpg' %}" alt="Abdul" style="width:100%">
+      <div class="container">
+        <h2>ABDUL REHMAN</h2>
+        <p class="title">TECO (17CO34)</p>
+        <p>Django developer and Interested in ML & AI.</p>
+        <p>mabdul@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'img/z.jpg' %}" alt="Zeeshan" style="width:100%">
+      <div class="container">
+        <h2>ZEESHAN AZAM</h2>
+        <p class="title">TECO (17CO50)</p>
+        <p>Interested in ML, AI and python developer.</p>
+        <p>zeeshan@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'img/u.jpg' %}" alt="Ubed" style="width:100%">
+      <div class="container">
+        <h2>Ubed Shaikh</h2>
+        <p class="title">TECO (17CO49)</p>
+        <p>Interested in Hacking, cracking and python developer.</p>
+        <p>ubed@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+    <div class="column">
+    <div class="card">
+      <img src="{% static 'img/w.jpg' %}" alt="Waseem" style="width:100%">
+      <div class="container">
+        <h2>Waseem Dar</h2>
+        <p class="title">TECO (17CO54)</p>
+        <p>Interested in Red Hat, hacking and python.</p>
+        <p>waseem@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+{% endblock %}
+</html>
